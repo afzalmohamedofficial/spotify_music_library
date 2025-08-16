@@ -1,0 +1,19 @@
+with col1:
+    st.image("assets/images/img_1.jpg", use_column_width=True)
+    if st.button("Anirudh", key="anirudh"):
+        st.session_stage["page"] = "anirudh"
+
+with col1:
+    st.image("assets/images/img_1.jpg", use_column_width=True)
+    if st.button("Anirudh", key="yuvan"):
+        st.session_stage["page"] = "yuvan"
+
+with col3:
+    st.image("assets/images/img_1.jpg", use_column_width=True)
+    if st.button("Anirudh", key="imman"):
+        st.session_stage["page"] = "imman"  
+    
+with col4:
+    st.image("assets/images/img_1.jpg", use_column_width=True)
+    if st.button("Anirudh", key="gv"):
+        st.session_stage["page"] = "gv" 

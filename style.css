@@ -1,0 +1,7 @@
+/* style.css */
+
+/* Hide image expand (fullscreen) button */
+button[title="View fullscreen"] {
+    visibility: hidden;
+}
+
