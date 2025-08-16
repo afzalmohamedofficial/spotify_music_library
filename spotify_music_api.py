@@ -6,9 +6,10 @@ import pandas as pd
 import streamlit as st
 
 # Load enviorment variables
-load_dotenv()
-CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
-CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
+if os.path.exists(".env"):
+       load_dotenv()
+CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID") or st.secrets["SPOTIFY_CLIENT_ID"]
+CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET") or st.secrets["SPOTIFY_CLIENT_SECRET"]
 auth_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
 SP = spotipy.Spotify(auth_manager=auth_manager)
 
