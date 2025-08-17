@@ -14,36 +14,33 @@ local_css("style.css")
 
 with open("./assets/tamil_music_artist_id.json", "r") as file:
     artist_list = json.load(file)
-
 artist_dict = {artist["artist_name"]:artist["artist_id"] for artist in artist_list}
 
 # Set default session state
 st.session_state.setdefault("page", "top_tracks")
 st.session_state.setdefault("artist_id", list(artist_dict.values())[0])
-
-st.title("Tamil Music Library")
+st.title("🎶 Tamil Music Library")
 
 option = st.selectbox("Select Artist", sorted(artist_dict.keys()))
-
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    st.image("assets/images/img_1.jpg", use_column_width=True)
+    st.image("assets/images/img1.PNG", use_column_width=True)
     if st.button("Top 10 tracks", key="top_tracks"):
         st.session_state["page"] = "top_tracks"
 
 with col2:
-    st.image("assets/images/img_1.jpg", use_column_width=True)
+    st.image("assets/images/img2.png", use_column_width=True)
     if st.button("All Album", key="all_album"):
         st.session_state["page"] = "all_album"
 
 with col3:
-    st.image("assets/images/img_1.jpg", use_column_width=True)
+    st.image("assets/images/img3.png", use_column_width=True)
     if st.button("All songs", key="all_songs"):
         st.session_state["page"] = "all_songs"
       
 with col4:
-    st.image("assets/images/img_1.jpg", use_column_width=True)
+    st.image("assets/images/img4.png", use_column_width=True)
     if st.button("Song By Year", key="song_year"):
         st.session_state["page"] = "song_year"
 
